@@ -1,0 +1,9 @@
+name: probe
+on:
+  repository_dispatch:
+    types: [probe]
+jobs:
+  probe:
+    runs-on: self-hosted
+    steps:
+      - run: echo "probe_id=${{ github.event.client_payload.probe_id }}"
