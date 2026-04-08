@@ -1,0 +1,10 @@
+name: push-probe
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  probe:
+    runs-on: self-hosted
+    steps:
+      - run: echo "ref=${GITHUB_REF} time=$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
